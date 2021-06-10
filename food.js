@@ -7,7 +7,7 @@ export function DrawFood()
     let i=0;
     do
         random = Math.floor(Math.random() * GAME_WIDTH * GAME_WIDTH);
-    while(gameBoard.childNodes[random].classList.contains("snake"));
-    
+    while(gameBoard.childNodes[random].classList.contains("snake0", "snake1"));
+
     gameBoard.childNodes[random].classList.add("food");
 }
