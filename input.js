@@ -1,5 +1,4 @@
 export var inputDirections = [{x: 1, y: 0}, {x: -1, y: 0}];
-//import { lastDirection } from './snake.js';
 import { Pause } from './start.js';
 import { snakes } from './snake.js';
 window.addEventListener("keydown", e => 

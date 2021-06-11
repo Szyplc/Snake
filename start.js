@@ -14,5 +14,5 @@ for(let i=0;i<GAME_WIDTH * GAME_WIDTH;i++)
     block.classList.add("bg");
     gameBoard.appendChild(block);
 }
-//Number.prototype.between = (a, b) => { return a <= this && this <= b; }
+
 Number.prototype.between = function(a, b) { return a <= this && this <= b; };
