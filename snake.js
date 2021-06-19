@@ -85,12 +85,23 @@ export function Draw()
             gameBoard.childNodes[segment.y * GAME_WIDTH + segment.x].classList.add("snake" + i);
         });
     });
+    //Head
+    snakes.forEach((snake, i) => {
+        let lastPositionHead = snake.body[1].x + (snake.body[1].y * GAME_WIDTH);
+        gameBoard.childNodes[lastPositionHead].classList.remove("head");
+
+        let postionHead = snake.body[0].x + (snake.body[0].y * GAME_WIDTH);
+        gameBoard.childNodes[postionHead].classList.add("head");
+
+        //Rotate Head
+        gameBoard.childNodes[postionHead].style.transform = `rotate(${DirectionToRotate(snake.inputDirection)}deg)`;
+    });
 }
 function End(draw)
 {
     //Clearing board
     for(let i=0;i<GAME_WIDTH * GAME_WIDTH;i++)
-        gameBoard.childNodes[i].classList.remove("snake0", "snake1", "food");
+        gameBoard.childNodes[i].classList.remove("snake0", "snake1", "food", "head");
     //Set snakes initial settings
     snakes = [{
         body: [{x: 3, y: 5}, 
@@ -120,4 +131,11 @@ function End(draw)
     }
     //Adding food
     DrawFood();
+}
+function DirectionToRotate(dir)
+{
+    if(dir.x == 1) return 90;
+    if(dir.x == -1) return 270;
+    if(dir.y == -1) return 0;
+    if(dir.y == 1) return 180;
 }

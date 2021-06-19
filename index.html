@@ -19,33 +19,47 @@
 
             #game-board
             {
-                background-color: #ccc;
+                background-color: #10e310;
                 width: 100vmin;
                 height: 100vmin;
                 display: grid;
                 grid-template-rows: repeat(21, 1fr);
                 grid-template-columns: repeat(21, 1fr);
             }
+            .bg:nth-child(even)
+            {
+                background-color: #84f084;
+            }
             .snake0
             {
-                background-color: blue;
+                background-color: blue !important;
                 border: .25vmin solid black;
+                border-radius: 10px;
             }
             .snake1
             {
-                background-color: green;
+                background-color: purple !important;
                 border: .25vmin solid black;
+                border-radius: 10px;
             }
             .food
             {
-                background-color: red;
-                border: .25vmin solid black;
+                background-image: url("apple.png");
+                background-size: 100% 100%;
             }
-            .bg
+            .head
             {
-                border: .25vmin solid black;
+                background-image: url("snake_head.png") !important;
+                background-size: 100% 100%;
             }
-
+            #menu
+            {
+                position: absolute;
+                justify-content: center;
+                height: 40%;
+                width: 40%;
+                background-color: #1b8c0a;
+            }
         </style>
         <script src="start.js" defer type="module"></script>
         <script src="game.js" defer type="module"></script>
@@ -53,5 +67,9 @@
     </head>
     <body>
         <div id="game-board"></div>
+        <div id="menu" style="visibility: hidden;">
+            Snakes speed: 
+            <input type="number" style="width: 30px;" id="snakesSpeed" min="1">
+        </div>
     </body>
 </html>
