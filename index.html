@@ -46,6 +46,7 @@
             {
                 background-image: url("apple.png");
                 background-size: 100% 100%;
+                transform: rotate(0deg) !important;
             }
             .head
             {
@@ -58,7 +59,74 @@
                 justify-content: center;
                 height: 40%;
                 width: 40%;
-                background-color: #1b8c0a;
+                background-color: #00a6d9;
+                border-radius: 25px;
+                border: black 2px solid;
+            }
+            div h2
+            {
+                text-align: center;
+                font-size: 40px;
+            }
+            .score
+            {
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 10%;
+                justify-content: space-around;
+            }
+            .score div
+            {
+                font-size: 30px;
+            }
+            #options
+            {
+                font-size: 25px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                border: black 2px solid;
+                background-color: #004eb5;
+                border-radius: 5px;
+                padding: 10px;
+            }
+            #options input[type=number]
+            {
+                width: 30px;
+                height: 30px;
+                font-size: 20px;
+                border: 1px black solid;
+                border-radius: 5px;
+                text-align: center;
+                margin: 2px;
+                background-color: #dedede;
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+
+            /* Firefox */
+            input[type=number] {
+            -moz-appearance: textfield;
+            }
+            #options button
+            {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-radius: 5px;
+                border: black 2px solid;
+                background-color: #dedede;
+                font-weight: 550;
+            }
+            #options button:hover
+            {
+                background-color: #13fc03;
+                transition: background-color 500ms linear;
             }
         </style>
         <script src="start.js" defer type="module"></script>
@@ -68,8 +136,19 @@
     <body>
         <div id="game-board"></div>
         <div id="menu" style="visibility: hidden;">
-            Snakes speed: 
-            <input type="number" style="width: 30px;" id="snakesSpeed" min="1">
+            <h2>Score:</h2>
+            <br> 
+            <div class="score">
+                <div class="point">Player 1: <span id="0">0</span></div>
+                <div id="whoWin"></div>
+                <div class="point">Player 2: <span id="1">0</span></div>
+            </div>
+            <br>
+            <div id="options">
+                <span> Snakes speed: 
+                <input type="number" style="width: 30px;" id="snakesSpeed" min="1"></span>
+                <button id="reset">Reset</button>
+            </div>
         </div>
     </body>
 </html>

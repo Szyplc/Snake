@@ -1,5 +1,5 @@
 let lastRenderTime = 0;
-import { SNAKE_SPEED } from './start.js';
+import { gameBoard, SNAKE_SPEED } from './start.js';
 import { Update as UpdateSnake, Draw as DrawSnake } from './snake.js';
 function main(currentTime)
 {
